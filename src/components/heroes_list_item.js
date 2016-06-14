@@ -13,7 +13,8 @@ const HeroesListItem = ({ hero, handleSelect }) => {
 
   return (
     <div className={'hero' + ' ' + hero.role + active} onClick={() => handleSelect(hero)}>
-      <div className="hero__icon" style={style}></div>
+      {/*<div className="hero__icon" style={style}></div>*/}
+      <img className="hero__image" src={hero.img} alt={hero.name}/>
     </div>
   );
 }

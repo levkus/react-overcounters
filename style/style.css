@@ -71,7 +71,7 @@ body {
   border-left-width: 0;
   border-right-width: 0;
   box-sizing: content-box;
-  /*transition: .1s;*/
+  /*transition: transform .1s;*/
 }
 
 .hero:before {
@@ -79,6 +79,21 @@ body {
   padding-top: 110%;
   display: block;
   content: '';
+}
+
+.hero__image {
+  transform: skew(-24.88rad) scale(1);
+  display: block;
+  position: absolute;
+  height: 100%;
+  left: -12%;
+  top: 0;
+  /*bottom: -5px;*/
+}
+
+.hero:hover > .hero__image, .hero.active > .hero__image {
+  transform: scale(1) skew(-24.88rad);
+  height: 100%;
 }
 
 .hero--small {
