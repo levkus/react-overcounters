@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .left {
@@ -20,8 +23,6 @@ body {
 
 .overwatch {
   background-position: center;
-  /*background-size: cover;*/
-  /*background-repeat: no-repeat;*/
   background-attachment: fixed;
   display: flex;
   flex-flow: row;
@@ -48,10 +49,6 @@ body {
   margin-bottom: 0;
 }
 
-/*.heroes-class__heroes .hero {
-  width: 16.66%;
-}*/
-
 .heroes-class__header {
   margin-top: 0;
   text-transform: uppercase;
@@ -67,11 +64,8 @@ body {
   cursor: pointer;
   margin-right: 1.65%;
   border-radius: .5rem;
-  border: 3px solid #DDDDE8;
-  border-left-width: 0;
-  border-right-width: 0;
-  box-sizing: content-box;
-  /*transition: transform .1s;*/
+  border-top: 3px solid #DDDDE8;
+  border-bottom: 3px solid #DDDDE8;
 }
 
 .hero:before {
@@ -81,19 +75,16 @@ body {
   content: '';
 }
 
-.hero__image {
-  transform: skew(-24.88rad) scale(1);
-  display: block;
-  position: absolute;
-  height: 100%;
-  left: -12%;
-  top: 0;
-  /*bottom: -5px;*/
+.hero:hover, .hero.active {
+  background-color: #F7931E;
+  border: none;
+  box-shadow: 0 0 1px 2px #ffd800;
+  transform: skew(24.88rad) scale(1.15);
 }
 
-.hero:hover > .hero__image, .hero.active > .hero__image {
-  transform: scale(1) skew(-24.88rad);
-  height: 100%;
+.hero.active {
+  z-index: 10;
+  box-shadow: 0 0 0 2px #ffd800, 0 0 9px 3px rgba(238, 213, 1, .9), inset 0 0 1px 1px rgba(238, 213, 1, .35);
 }
 
 .hero--small {
@@ -103,67 +94,20 @@ body {
   background-color: transparent;
 }
 
-.hero__name {
-  font-family: 'BigNoodleTooOblique', Impact, sans-serif;
-  color: #94A3CC;
-  font-size: 1.375rem;
-  position: relative;
-  top: -1px;
-}
-
-.hero:hover, .hero.active {
-  background-color: #F7931E;
-  border: none;
-  box-shadow: 0 0 0 2px #ffd800;
-  transform: skew(24.88rad) scale(1.15);
-}
-
-.hero.active {
-
-  z-index: 10;
-  box-shadow: 0 0 0 2px #ffd800, 0 0 9px 3px rgba(238, 213, 1, .9), inset 0 0 1px 1px rgba(238, 213, 1, .35);
-
-}
-
-.hero:hover .hero__icon, .hero.active .hero__icon {
-  transform: skew(-24.88rad) scale(1);
-}
-
 .hero--small:hover {
   background-color: transparent;
   box-shadow: none;
-  border-left-width: 0;
-  border-right-width: 0;
   transform: skew(24.88rad);
 }
 
-/*.hero:hover > .hero__icon, .hero.active > .hero__icon {
-  transform: skew(-24.88rad) scale(1.15);
-}
-
-.hero--small:hover > .hero__icon {
-  transform: skew(-24.88rad);
-}*/
-
-.hero__icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: -15px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 140%;
+.hero__image {
   transform: skew(-24.88rad) scale(1);
-}
-
-/*.hero__icon:before {
-  position: relative;
-  padding-top: 110%;
   display: block;
-  content: '';
-}*/
+  position: absolute;
+  height: 100%;
+  left: -12%;
+  top: 0;
+}
 
 .hero-card {
   background: rgba(255, 255, 255, .52);
@@ -268,4 +212,12 @@ body {
   box-shadow: none;
   border-left-width: 0;
   border-right-width: 0;
+}
+
+.hero__name {
+  font-family: 'BigNoodleTooOblique', Impact, sans-serif;
+  color: #94A3CC;
+  font-size: 1.375rem;
+  position: relative;
+  top: -1px;
 }

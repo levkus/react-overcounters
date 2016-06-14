@@ -1,10 +1,6 @@
 import React from 'react';
 
 const HeroCounterItem = ({ hero, handleSelect, side }) => {
-  const style = {
-    backgroundImage: 'url(' + hero.img + ')'
-  }
-
   let left;
   let right;
   const name = <span className="hero__name">{hero.name}</span>;
@@ -21,7 +17,7 @@ const HeroCounterItem = ({ hero, handleSelect, side }) => {
     <div className={'hero--small__wrapper' + ' ' + side} onClick={() => handleSelect(hero)}>
       {left}
       <div className={'hero hero--small' + ' ' + hero.role}>
-        <div className="hero__icon" style={style}></div>
+        <img className="hero__image" src={hero.img} alt={hero.name}/>
       </div>
       {right}
     </div>
