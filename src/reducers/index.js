@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import BooksReducer from './reducer_books';
-import ActiveBookReducer from './reducer_active_book'
+import HeroesReducer from './reducer_heroes';
+import ActiveHeroReducer from './reducer_active_hero';
 
 const rootReducer = combineReducers({
-  books: BooksReducer,
-  activeBook: ActiveBookReducer
+  heroes: HeroesReducer,
+  activeHero: ActiveHeroReducer
 });
 
 export default rootReducer;

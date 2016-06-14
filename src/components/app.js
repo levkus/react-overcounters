@@ -1,14 +1,15 @@
 import React from 'react';
 import { Component } from 'react';
-import BookList from '../containers/books_list';
-import BookDetail from '../containers/book_detail';
+import HeroesList from '../containers/heroes_list';
+import HeroDetail from '../containers/hero_detail';
+import Trianglify from 'trianglify';
 
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <BookList />
-        <BookDetail />
+      <div className="overwatch">
+        <HeroesList />
+        <HeroDetail />
       </div>
     );
   }

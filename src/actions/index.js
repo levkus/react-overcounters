@@ -1,8 +1,8 @@
 // Action creator returns an Action (an object with type and payload)
 
-export function selectBook(book) {
+export function selectHero(hero) {
   return {
-    type: 'BOOK_SELECTED',
-    payload: book
+    type: 'HERO_SELECTED',
+    payload: hero
   }
 }
