@@ -43,7 +43,7 @@ class HeroDetail extends Component {
       <div className="hero-detail">
         <div className="hero-card">
           <div className="hero-card__header">
-            <img className="hero-card-image" src={activeHero.img} alt={this.props.activeHero.name}/>
+            <img className="hero-card__image" src={activeHero.hex} alt={this.props.activeHero.name}/>
             <div className="hero-card__name">{activeHero.name}</div>
           </div>
           <div className="hero-card__info">

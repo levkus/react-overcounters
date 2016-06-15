@@ -4,6 +4,12 @@ import { selectHero } from '../actions/index';
 import { bindActionCreators } from 'redux';
 import _ from 'lodash';
 import HeroesListItem from '../components/heroes_list_item';
+import InlineSVG from 'svg-inline-react';
+
+import iconBullets from '../components/svg/bullets.svg';
+import iconCross from '../components/svg/cross.svg';
+import iconShield from '../components/svg/shield.svg';
+import iconTower from '../components/svg/tower.svg';
 
 class HeroesList extends Component {
   renderList() {
@@ -21,15 +27,27 @@ class HeroesList extends Component {
     });
 
     return (
-      <div className="heroes-list__class">
-        <h3 className="heroes-class__header">Offense</h3>
-        <div className="heroes-class__heroes">{offense}</div>
-        <h3 className="heroes-class__header">Defense</h3>
-        <div className="heroes-class__heroes">{defense}</div>
-        <h3 className="heroes-class__header">Tank</h3>
-        <div className="heroes-class__heroes">{tank}</div>
-        <h3 className="heroes-class__header">Support</h3>
-        <div className="heroes-class__heroes">{support}</div>
+      <div>
+        <div className="heroes-list__class">
+          <InlineSVG src={iconBullets} />
+          <h3 className="heroes-class__header">Offense</h3>
+          <div className="heroes-class__heroes">{offense}</div>
+        </div>
+        <div className="heroes-list__class">
+          <InlineSVG src={iconTower} />
+          <h3 className="heroes-class__header">Defense</h3>
+          <div className="heroes-class__heroes">{defense}</div>
+        </div>
+        <div className="heroes-list__class">
+          <InlineSVG src={iconShield} />
+          <h3 className="heroes-class__header">Tank</h3>
+          <div className="heroes-class__heroes">{tank}</div>
+        </div>
+        <div className="heroes-list__class">
+          <InlineSVG src={iconCross} />
+          <h3 className="heroes-class__header">Support</h3>
+          <div className="heroes-class__heroes">{support}</div>
+        </div>
       </div>
     );
   }

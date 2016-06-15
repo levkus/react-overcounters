@@ -1,3 +1,5 @@
+/* Utilty */
+
 * {
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
@@ -11,6 +13,15 @@
 
 .right {
   float: right;
+}
+
+.icon {
+  fill: rgba(221, 221, 232, .8);
+  width: 22px;
+  height: 24px;
+  margin-right: 6px;
+  position: relative;
+  top: 7px;
 }
 
 body {
@@ -28,32 +39,40 @@ body {
   flex-flow: row;
 }
 
+/* Heroes List */
+
 .heroes-list {
   padding: 2rem;
   width: 40%;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(./list-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  color: #DDDDE8;
+  background-position: top center;
+  color: rgba(221, 221, 232, .8);
+}
+
+.heroes-list__class i {
+  display: inline-block;
 }
 
 .heroes-class__heroes {
   display: flex;
   flex-flow: row wrap;
-  margin-bottom: 1.2rem;
-}
-
-.heroes-class__heroes:last-child {
-  margin-bottom: 0;
 }
 
 .heroes-class__header {
+  font-size: 1.25rem;
+  font-weight: 300;
   margin-top: 0;
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(255, 255, 255, .3);
+  border-bottom: 1px solid rgba(221, 221, 232, .3);
+  display: inline-block;
+  width: calc(100% - 28px);
+  /*margin-left: 40px;*/
 }
+
+/* Hero */
 
 .hero {
   position: relative;
@@ -63,6 +82,7 @@ body {
   overflow: hidden;
   cursor: pointer;
   margin-right: 1.65%;
+  margin-bottom: 1rem;
   border-radius: .5rem;
   border-top: 3px solid #DDDDE8;
   border-bottom: 3px solid #DDDDE8;
@@ -76,15 +96,16 @@ body {
 }
 
 .hero:hover, .hero.active {
-  background-color: #F7931E;
+  background: #F7931E;
   border: none;
-  box-shadow: 0 0 1px 2px #ffd800;
-  transform: skew(24.88rad) scale(1.15);
+  box-shadow: 0 0 1px 2px #ffd800, inset 20px 20px 50px 0 #ffd800;
+  transform: skew(24.88rad) scale(1.10);
 }
 
 .hero.active {
   z-index: 10;
-  box-shadow: 0 0 0 2px #ffd800, 0 0 9px 3px rgba(238, 213, 1, .9), inset 0 0 1px 1px rgba(238, 213, 1, .35);
+  box-shadow: 0 0 0 2px #ffd800, 0 0 9px 3px rgba(238, 213, 1, .9), inset 0 0 1px 1px rgba(238, 213, 1, .35), inset 20px 20px 50px 0 #ffd800;
+  transform: skew(24.88rad) scale(1.20);
 }
 
 .hero--small {
@@ -92,6 +113,7 @@ body {
   border-color: #97A1C9;
   display: inline-block;
   background-color: transparent;
+  margin-bottom: 0;
 }
 
 .hero--small:hover {
@@ -109,6 +131,8 @@ body {
   top: 0;
 }
 
+/* Hero Card */
+
 .hero-card {
   background: rgba(255, 255, 255, .52);
   border: 2px solid rgba(55, 88, 174, .54);
@@ -121,6 +145,8 @@ body {
 
 .hero-card__info {
   display: flex;
+  position: relative;
+  top: -40px;
 }
 
 .hero-card__header {
@@ -131,7 +157,15 @@ body {
   align-items: center;
 }
 
+.hero-card__image {
+  width: 50%;
+  position: relative;
+  top: -20px;
+}
+
 .hero-card__name {
+  position: relative;
+  top: -40px;
   font-family: 'BigNoodleTooOblique', Impact, sans-serif;
   color: #112F58;
   text-transform: uppercase;
@@ -140,7 +174,7 @@ body {
 }
 
 .hero-detail {
-  padding: 1rem;
+  padding-top: 2rem;
   width: 60%;
   display: flex;
   flex-flow: column nowrap;
@@ -204,6 +238,10 @@ body {
 
 .hero--small__wrapper:hover > .hero__name {
   color: #5b69a2;
+}
+
+.hero--small__wrapper.active .hero__name {
+  color: red;
 }
 
 .hero--small__wrapper:hover > .hero--small {
