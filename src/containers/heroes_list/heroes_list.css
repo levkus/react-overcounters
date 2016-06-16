@@ -1,0 +1,10 @@
+.heroesList {
+  padding: 2rem;
+  min-height: 100vh;
+  width: 40%;
+  background-image: url(http://localhost:8080/img/list-bg.jpg);
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgba(221, 221, 232, .8);
+}

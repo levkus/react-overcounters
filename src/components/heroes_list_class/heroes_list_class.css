@@ -1,0 +1,18 @@
+.list {
+  display: flex;
+  flex-flow: row wrap;
+
+  i {
+    display: inline-block;
+  }
+}
+
+.header {
+  display: inline-block;
+  margin-top: 0;
+  width: calc(100% - 28px);
+  border-bottom: 1px solid rgba(221, 221, 232, .3);
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1.25rem;
+}

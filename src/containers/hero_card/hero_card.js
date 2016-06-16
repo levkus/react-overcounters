@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import _ from 'lodash';
 import { bindActionCreators } from 'redux';
-import { selectHero } from '../actions/index';
-import HeroCounterItem from '../components/hero_counter_item';
-import HeroDetailScale from '../components/hero_detail_scale';
+import _ from 'lodash';
 
-class HeroDetail extends Component {
+import { selectHero } from '../../actions/index';
+import HeroCardHeader from '../../components/hero_card_header/hero_card_header';
+import HeroCardScale from '../../components/hero_card_scale/hero_card_scale';
+import HeroCounterItem from '../../components/hero_counter_item/hero_counter_item';
+import styles from './hero_card.css';
+
+class HeroCard extends Component {
   render() {
     const heroes = this.props.heroes;
     const activeHero = this.props.activeHero;
@@ -41,15 +44,12 @@ class HeroDetail extends Component {
 
     return(
       <div className="hero-detail">
-        <div className="hero-card">
-          <div className="hero-card__header">
-            <img className="hero-card__image" src={activeHero.hex} alt={this.props.activeHero.name}/>
-            <div className="hero-card__name">{activeHero.name}</div>
-          </div>
-          <div className="hero-card__info">
-            <div className="hero-info__strong">{strongAgainst}</div>
-            <HeroDetailScale />
-            <div className="hero-info__weak">{weakAgainst}</div>
+        <div className={styles.card}>
+          <HeroCardHeader image={activeHero.hex} name={activeHero.name} />
+          <div className={styles.info}>
+            <div className={styles.strong}>{strongAgainst}</div>
+            <HeroCardScale />
+            <div className={styles.weak}>{weakAgainst}</div>
           </div>
         </div>
       </div>
@@ -68,4 +68,4 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators({ selectHero: selectHero }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeroDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(HeroCard);

@@ -1,0 +1,35 @@
+@import '../../style/vars.css';
+
+.scale {
+  padding-top: .7rem;
+  width: 105px;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.stripe {
+  margin-right: 4px;
+  width: 20px;
+  height: 33px;
+  border: 1px solid $hero-card-stripe;
+  transform: skew(24.88rad);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.filled {
+  background-color: $hero-card-stripe;
+  composes: stripe;
+}
+
+.empty {
+  background-color: transparent;
+  composes: stripe;
+}

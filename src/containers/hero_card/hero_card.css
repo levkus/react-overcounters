@@ -1,0 +1,21 @@
+@import '../../style/vars.css';
+
+.card {
+  margin: 0 auto;
+  padding: 1.3rem;
+  min-width: 450px;
+  width: 450px;
+  border: 2px solid $card-border-color;
+  border-radius: 1rem;
+  background: $card-background;
+}
+
+.info {
+  position: relative;
+  top: -40px;
+  display: flex;
+}
+
+.strong, .weak {
+  width: 155px;
+}

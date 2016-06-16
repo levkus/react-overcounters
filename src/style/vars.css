@@ -1,0 +1,17 @@
+/* Heroes list */
+
+$list-color: rgba(221, 221, 232, .8);
+$list-normal-bg: rgba(51,51,51,.9);
+$list-selected-bg: #F7931E;
+$list-selected-border: #ffd800;
+$list-selected-glow: rgba(238, 213, 1, .9);
+$list-selected-inner-glow: rgba(238, 213, 1, .35);
+
+/* Hero Card */
+
+$card-background: rgba(255, 255, 255, .7);
+$card-header-text: #112F58;
+$card-text: #94A3CC;
+$card-text-hover: #5b69a2;
+$card-border-color: rgba(55, 88, 174, .54);
+$hero-card-stripe: #DDDDE8;
