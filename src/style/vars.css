@@ -1,16 +1,17 @@
 /* Heroes list */
 
 $list-color: rgba(221, 221, 232, .8);
-$list-normal-bg: rgba(51,51,51,.9);
+$list-normal-bg: transparent;
 $list-selected-bg: #F7931E;
-$list-selected-border: #ffd800;
-$list-selected-glow: rgba(238, 213, 1, .9);
-$list-selected-inner-glow: rgba(238, 213, 1, .35);
+$list-selected-border: #ffe600;
+$list-selected-glow: rgba(255, 228, 0, 1);
+$list-selected-outer-accent: rgba(255, 131, 0, .6);
+$list-selected-inner-glow: rgba(255, 234, 57, .35);
 
 /* Hero Card */
 
-$card-background: rgba(255, 255, 255, .7);
-$card-header-text: #112F58;
+$card-background: rgba(255, 255, 255, .54);
+$card-header-text: #0c2f59;
 $card-text: #94A3CC;
 $card-text-hover: #5b69a2;
 $card-border-color: rgba(55, 88, 174, .54);
